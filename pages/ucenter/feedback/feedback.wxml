@@ -1,0 +1,25 @@
+<view class="container">
+
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{FeedbackData}}">
+    <view class="picker">
+      <view class="fb-type">
+        <view class="type-label">{{FeedbackData[index]}}</view>
+        <image class="type-icon" src="/static/images/more/minecenterok.png"></image>
+
+      </view>
+    </view>
+  </picker>
+  <view class="fb-body">
+    <textarea class="content" placeholder="我们非常希望您能留下对改小程序的建议，为我们会不断的改进优化做指导。以给您更好的体验"  bindinput="bindWordLimit"  maxlength="{{noteMaxLen}}" />
+    <view class="text-count">{{currentNoteLen}}/{{noteMaxLen}}</view>
+  </view>
+  <view class="fb-mobile">
+    <view class="label">手机号码/邮箱</view>
+    <view class="mobile-box">
+      <input class="mobile" placeholder="方便我们与你联系" bindinput="user_contact"/>
+      <image class="clear-icon" src="/static/images/more/close.png"></image>
+    </view>
+  </view>
+
+  <button class="fb-btn" bindtap="submit">提交</button>
+</view>
